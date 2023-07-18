@@ -20,6 +20,8 @@ return new class extends Migration
             $table->integer('pkg_price')->length(6);
             $table->integer('pkg_duration')->length(5);
             $table->enum('status',['Active','Inactive']);
+            $table->foreignId('created_by');
+            $table->foreignId('modified_by')->nullable();
             $table->timestamps();
         });
     }

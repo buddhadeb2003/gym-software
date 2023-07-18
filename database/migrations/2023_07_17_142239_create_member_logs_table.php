@@ -17,6 +17,8 @@ return new class extends Migration
             $table->date('date');
             $table->string('height',10);
             $table->string('weight',10);
+            $table->foreignId('created_by');
+            $table->foreignId('modified_by')->nullable();
             $table->timestamps();
         });
     }

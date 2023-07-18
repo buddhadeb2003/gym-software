@@ -17,6 +17,8 @@ return new class extends Migration
             $table->foreignId('item_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->integer('avg_quantity')->length(4);
             $table->integer('present')->length(3);
+            $table->foreignId('created_by');
+            $table->foreignId('modified_by')->nullable();
             $table->timestamps();
         });
     }

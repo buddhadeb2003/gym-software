@@ -16,6 +16,8 @@ return new class extends Migration
             $table->date('date');
             $table->foreignId('member_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->enum('status',['Present','Absent']);
+            $table->foreignId('created_by');
+            $table->foreignId('modified_by')->nullable();
             $table->timestamps();
         });
     }

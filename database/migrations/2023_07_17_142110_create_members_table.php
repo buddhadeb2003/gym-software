@@ -23,7 +23,12 @@ return new class extends Migration
             $table->string('email',100);
             $table->integer('sos_contact')->length(15);
             $table->string('avatar',10);
+            $table->enum('doc_type',['Aadhaar Card','Pan Card','Driving Licence','Passport','Voter Card']);
+            $table->string('doc_number',20);
+            $table->string('doc_file',10);
             $table->enum('status',['Active','Inactive']);
+            $table->foreignId('created_by');
+            $table->foreignId('modified_by')->nullable();
             $table->timestamps();
         });
     }

@@ -17,6 +17,8 @@ return new class extends Migration
             $table->integer('payable_amount')->length(6);
             $table->integer('paid_amount')->length(6);
             $table->integer('due_amount')->length(8);
+            $table->foreignId('created_by');
+            $table->foreignId('modified_by')->nullable();
             $table->timestamps();
         });
     }

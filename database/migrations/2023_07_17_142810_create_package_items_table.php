@@ -18,6 +18,8 @@ return new class extends Migration
             $table->enum('type',['Class','Service']);
             $table->integer('quantity')->length(4);
             $table->integer('price')->length(6);
+            $table->foreignId('created_by');
+            $table->foreignId('modified_by')->nullable();
             $table->timestamps();
         });
     }

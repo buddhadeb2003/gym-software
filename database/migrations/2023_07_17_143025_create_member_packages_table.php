@@ -17,7 +17,6 @@ return new class extends Migration
             $table->foreignId('package_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->date('start_date');
             $table->date('end_date');
-
             $table->timestamps();
         });
     }

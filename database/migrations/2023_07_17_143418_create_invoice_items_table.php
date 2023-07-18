@@ -16,6 +16,8 @@ return new class extends Migration
             $table->foreignId('invoice_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('member_package_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->integer('price')->length(6);
+            $table->foreignId('created_by');
+            $table->foreignId('modified_by')->nullable();
             $table->timestamps();
         });
     }

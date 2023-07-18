@@ -17,6 +17,8 @@ return new class extends Migration
             $table->enum('type',['Class','Service']);
             $table->integer('price')->length(6);
             $table->enum('status',['Active','Inactive']);
+            $table->foreignId('created_by');
+            $table->foreignId('modified_by')->nullable();
             $table->timestamps();
         });
     }
